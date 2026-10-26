@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcar asistencia | CETPRO San Pedro de Aplao</title>
+<link rel="icon" href="img/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header class="cabecera">
+  <div class="cabecera-fila">
+    <a class="marca" href="index.html">
+      <img src="img/logo.png" alt="Logo del CETPRO San Pedro de Aplao">
+      <span><strong>CETPRO San Pedro de Aplao</strong><small>Control de asistencia</small></span>
+    </a>
+    <nav class="menu" aria-label="Navegación">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registrar</a>
+      <a href="asistencia.html" aria-current="page">Marcar asistencia</a>
+      <a href="listado.html">Listado</a>
+    </nav>
+  </div>
+  <h1>Marcar asistencia</h1>
+  <p>Escribe tu DNI, revisa tu nombre y confirma. Solo puedes marcar una vez al día.</p>
+</header>
+<main class="contenido">
+  <section class="panel">
+    <form id="form-buscar" novalidate>
+      <div>
+        <label for="dni">Tu DNI <span class="ayuda">(8 dígitos)</span></label>
+        <input id="dni" name="dni" type="text" inputmode="numeric" maxlength="8" autocomplete="off" required>
+        <p class="error-campo" id="e-dni"></p>
+      </div>
+      <div>
+        <button class="boton" id="btn-buscar" type="submit">Buscar estudiante</button>
+      </div>
+    </form>
+    <div id="mensaje" class="mensaje" role="status" aria-live="polite" style="margin-top:1rem"></div>
+    <section id="estudiante" class="estudiante" aria-live="polite" style="margin-top:1rem">
+      <h2 id="est-nombre"></h2>
+      <p id="est-programa"></p>
+      <div class="reloj">Hoy es <span id="reloj"></span></div>
+      <button class="boton sol" id="btn-confirmar" type="button">Confirmar asistencia</button>
+      <button class="boton fantasma" id="btn-cancelar" type="button">No soy yo</button>
+    </section>
+  </section>
+</main>
+<p class="pie-claro">CETPRO San Pedro de Aplao • Examen práctico de Informática</p>
+<script type="module" src="js/asistencia.js"></script>
+</body>
+</html>

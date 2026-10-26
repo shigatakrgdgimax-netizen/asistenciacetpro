@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listado de asistencias | CETPRO San Pedro de Aplao</title>
+<link rel="icon" href="img/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header class="cabecera">
+  <div class="cabecera-fila">
+    <a class="marca" href="index.html">
+      <img src="img/logo.png" alt="Logo del CETPRO San Pedro de Aplao">
+      <span><strong>CETPRO San Pedro de Aplao</strong><small>Control de asistencia</small></span>
+    </a>
+    <nav class="menu" aria-label="Navegación">
+      <a href="index.html">Inicio</a>
+      <a href="registro.html">Registrar</a>
+      <a href="asistencia.html">Marcar asistencia</a>
+      <a href="listado.html" aria-current="page">Listado</a>
+    </nav>
+  </div>
+  <h1>Listado de asistencias</h1>
+  <p>Por privacidad, el DNI se muestra parcialmente y no se publican teléfonos.</p>
+</header>
+<main class="contenido ancho">
+  <section class="panel">
+    <div class="herramientas">
+      <div>
+        <label for="buscar">Buscar por nombre</label>
+        <input id="buscar" type="search" placeholder="Escribe un nombre o apellido" autocomplete="off">
+      </div>
+      <div>
+        <label for="filtro-fecha">Fecha</label>
+        <input id="filtro-fecha" type="date">
+      </div>
+      <button class="boton fantasma" id="btn-limpiar" type="button">Limpiar filtros</button>
+    </div>
+    <div class="contador" aria-live="polite">
+      <div><strong id="total">0</strong><span>Total de asistencias</span></div>
+      <div><strong id="mostrando">0</strong><span>Mostrando ahora</span></div>
+    </div>
+    <div id="mensaje" class="mensaje" role="status" aria-live="polite"></div>
+    <div class="tabla-caja">
+      <table>
+        <thead>
+          <tr><th>Nombre</th><th>Programa</th><th>Fecha</th><th>Hora</th><th>DNI</th></tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<p class="pie-claro">CETPRO San Pedro de Aplao • Examen práctico de Informática</p>
+<script type="module" src="js/listado.js"></script>
+</body>
+</html>
